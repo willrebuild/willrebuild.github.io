@@ -4533,7 +4533,25 @@ Enemy.prototype.useSkill = function (a) {
     if (this.castleSkill) {
         var c = this;
         a = a.target.localToGlobal(a.x, a.y);
-        var d = Upgrade("skill_" + this.castleSkill), e = 60 - 30 * (1 - d.progress),
+        var skillName = "";
+        switch (this.castleSkill) {
+            case "red":
+                skillName = "Comet";
+                break;
+            case "yellow":
+                skillName = "Bugs";
+                break;
+            case "green":
+                skillName = "Palm";
+                break;
+            case "blue":
+                skillName = "Gold";
+                break;
+            default:
+                a = this.stage.screenWidth / 2 + a
+        }
+
+        var d = Upgrade("skill" + skillName), e = 60 - 30 * (1 - d.progress),
             f = new Graphics.circle(a.x, a.y, e);
         f.fillColor = "rgba(" + GAME_CONFIG.colors[this.castleSkill] + ",0.3)";
         f.lineWidth = 0;
