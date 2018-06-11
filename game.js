@@ -43,13 +43,13 @@ GAME_CONFIG.castle.upgrade = {
     skillReload: {cost: 450, costRatio: DEFAULT_COST_RATIO, maxLevel: 25},
     towersCount: {cost: 3000, costRatio: DEFAULT_COST_RATIO, maxLevel: 30},
     towersLevel: {cost: 1500, costRatio: DEFAULT_COST_RATIO, maxLevel: 30},
-    skill_red: {cost: 1200, costRatio: DEFAULT_COST_RATIO, maxLevel: 20},
-    skill_green: {cost: 1200, costRatio: DEFAULT_COST_RATIO, maxLevel: 20},
-    skill_blue: {
+    skillComet: {cost: 1200, costRatio: DEFAULT_COST_RATIO, maxLevel: 20},
+    skillBugs: {cost: 1200, costRatio: DEFAULT_COST_RATIO, maxLevel: 20},
+    skillPalm: {
         cost: 1200, costRatio: DEFAULT_COST_RATIO,
         maxLevel: 20
     },
-    skill_yellow: {cost: 1200, costRatio: DEFAULT_COST_RATIO, maxLevel: 20},
+    skillGold: {cost: 1200, costRatio: DEFAULT_COST_RATIO, maxLevel: 20},
     cannons: {cost: 750, costRatio: DEFAULT_COST_RATIO, maxLevel: 25},
     attack: {cost: 1500, costRatio: DEFAULT_COST_RATIO, maxLevel: 30},
     armor: {cost: 900, costRatio: DEFAULT_COST_RATIO, maxLevel: 30}
@@ -3735,7 +3735,7 @@ UpgradeSlot.selectedItem = null;
 UpgradeSlot.items = [];
 UpgradeSlot.prototype.setName = function (a) {
     this.name = a;
-    this.picture.gotoAndStop("power attack armor skillReload goldPerViking towersCount towersLevel skill_red skill_yellow skill_green skill_blue cannons".split(" ").indexOf(this.name));
+    this.picture.gotoAndStop("power attack armor skillReload goldPerViking towersCount towersLevel skillComet skillBugs skillPalm skillGold cannons".split(" ").indexOf(this.name));
     this.update()
 };
 UpgradeSlot.prototype.update = function () {
@@ -5355,6 +5355,8 @@ function Upgrade(a) {
             this.cost = Math.ceil(a.cost * (1 > this.progress ? 1 + a.costRatio * (this.level + 1) : 0))
         }, buy: function () {
             if (1 == this.progress || this.cost > GameData.money) return !1;
+            if(!GameData.upgrade[this.name])
+                GameData.upgrade[this.name] = 0;
             GameData.upgrade[this.name]++;
             GameData.money -= this.cost;
             //saveGameData();
@@ -5380,10 +5382,10 @@ Upgrade.state = {
     cannons: 0,
     attack: 0,
     armor: 0,
-    skill_red: 0,
-    skill_green: 0,
-    skill_blue: 0,
-    skill_yellow: 0
+    skillComet: 0,
+    skillBugs: 0,
+    skillPalm: 0,
+    skillGold: 0
 };
 Upgrade.prototype.getLevel = function () {
     return this.level || 0
