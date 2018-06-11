@@ -5145,7 +5145,7 @@ function showUpgrades() {
         }, 1E3), d.T = !0)
     };
     a.addChild(d);
-    for (var c = "power attack armor skillReload goldPerViking towersCount towersLevel cannons skill_red skill_yellow skill_green skill_blue".split(" "),
+    for (var c = "power attack armor skillReload goldPerViking towersCount towersLevel cannons skillComet skillBugs skillPalm skillGold".split(" "),
              e = 0, f = c.length; e < f; e++) {
         var g = new UpgradeSlot;
         g.setPosition(50 + e % 4 * 80, 80 + 80 * Math.floor(e / 4));
