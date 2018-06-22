@@ -19,7 +19,7 @@ var nebConfigArr = {
     }
 };
 var nebNowTime = Math.round((new Date()).getTime() / 1000);
-nebConfig = nebConfigArr["mainnet"];
+nebConfig = nebConfigArr["testnet"];
 neb.setRequest(new nebulas.HttpRequest(nebConfig["host"]));
 
 var nebApiCall = function (callFunction, callArgs, callback) {
