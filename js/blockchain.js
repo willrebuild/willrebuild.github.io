@@ -6,14 +6,14 @@ NebPay = require("nebpay");
 nebPay = new NebPay();
 var nebConfigArr = {
     mainnet: {
-        contractAddress: "n1jps9rYGfU75XUMsuoW7zkNkbSMqK99QoY",
-        txhash: "f5422eaa59c0ae5e3696a38b9e74992235210d202f0de163b62f0d296e075541",
+        contractAddress: "n1iAaYC3HDQ1fAcLjQFgZFNqnMjNUdppnqe",
+        txhash: "7891d854c6d5701f32d5006ec7e0fcb29f033f08eb72da2fc87f23dc79122ef2",
         host: "https://mainnet.nebulas.io",
         payhost: "https://pay.nebulas.io/api/mainnet/pay"
     },
     testnet: {
-        contractAddress: "n1qB2A2xph8ZSJm9WYjMmAPrj9479vVwR16",
-        txhash: "68111b2408b2a5f35deecc0babcc7ff8d8dd33bed9a1e40168efa596b2ac4676",
+        contractAddress: "n1q4LQzpsBrPcn9ihYeUtMGnHhQcKH1UFok",
+        txhash: "d6984b851a9c540c6f7546947ac6f1184f93d0b7b1e3ac5cb26182666ca12ced",
         host: "https://testnet.nebulas.io",
         payhost: "https://pay.nebulas.io/api/pay"
     }
