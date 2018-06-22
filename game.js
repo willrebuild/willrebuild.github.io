@@ -5288,7 +5288,7 @@ var saveData = function (data) {
 }
 
 var saveDataWin = function (data) {
-    nebPayCall("saveWin", [data], 0, function (ret) {
+    nebPayCall("saveWin", [data], 0.001, function (ret) {
         console.log("saveWin begin", ret);
     }, function (ret) {
         console.log("saveWin2", ret);
